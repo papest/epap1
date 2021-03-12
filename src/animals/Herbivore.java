@@ -10,6 +10,6 @@ public class Herbivore extends Animal {
     public void eat(Food food) {
 
         eatFood=food instanceof Grass;
-        System.out.println("Травоядные"+eatFood);
+
     }
 }

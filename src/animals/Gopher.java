@@ -3,7 +3,9 @@ package animals;
 public class Gopher extends Herbivore implements Voice, Run, Swim {
 
 
-    public Gopher(){  voice=this.voice();}
+    public Gopher(){
+        name="Суслик";
+    }
 
 
 

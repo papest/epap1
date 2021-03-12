@@ -11,7 +11,6 @@ public class Cornivorous extends Animal{
     public void eat(Food food) {
 
         eatFood=food instanceof Meat;
-        System.out.println(eatFood);
 
     }
 }

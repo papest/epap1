@@ -2,7 +2,9 @@ package animals;
 
 public class Goat extends Herbivore implements Voice, Run, Swim {
 
-
+    public Goat() {
+        name="Коза";
+    }
 
     @Override
     public void run() {

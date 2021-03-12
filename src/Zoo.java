@@ -25,6 +25,7 @@ public class Zoo {
        goat.eat(hay);
        Meatball meatball= new Meatball();
        wolf.eat(meatball);
+       Worker.feed(meatball,duck);
        Worker.feed(meatball,wolf);
        Worker.getVoice(wolf);
        Worker.getVoice(goat);

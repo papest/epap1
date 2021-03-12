@@ -3,9 +3,9 @@ package animals;
 
 public class Penguin extends Cornivorous implements Voice, Run, Swim {
 
-                  public Penguin(){
-                      String name;
-                  }
+    public Penguin(){
+        name="Пингвин";
+    }
 
 
     @Override

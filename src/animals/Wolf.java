@@ -2,9 +2,10 @@ package animals;
 
 public class Wolf extends Cornivorous implements Voice, Run, Swim {
 
+    public Wolf() {
+        name="Волк";
+    }
 
-
-    public Wolf(){  voice=this.Voice();}
     String Voice() {
             voice = "У-у-у-у!";
             return voice;

@@ -5,10 +5,6 @@ import food.Food;
 
 class Worker {
 
-    private  static Animal workerAnimal;
-   // private static Animal.Voice animalVoice;
-    private static Food workerFood;
-
 
     private  String workerName;
 
@@ -18,18 +14,17 @@ class Worker {
     }
 
 
-        public static void feed(Food food,Animal animal) {
-       workerAnimal=animal;
-       workerFood=food;
-       animal.eat(food);
-       if (workerAnimal.eatFood) {
-                System.out.println("Ест с удовольствием!");
-            } else {
-                System.out.println("Отказывается есть");
-            }
-        }
+      public static void feed(Food food,Animal animal) {
 
-        public static void getVoice(Voice c){
+        animal.eat(food);
+        if (animal.eatFood) {
+                System.out.println(animal.name+(" ест с удовольствием!"));
+            } else {
+                System.out.println(animal.name+" отказывается есть");
+            }
+      }
+
+      public static void getVoice(Voice c){
         System.out.println( c.voice());
         }
 

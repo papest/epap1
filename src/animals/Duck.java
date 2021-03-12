@@ -4,7 +4,7 @@ package animals;
 public class Duck extends Cornivorous implements Swim, Voice, Fly, Run {
 
     public Duck(){
-        String name;
+        name="Утка";
     }
 
 
