@@ -6,23 +6,21 @@ public class Wolf extends Cornivorous implements Voice, Run, Swim {
         name="Волк";
     }
 
-    String Voice() {
-            voice = "У-у-у-у!";
-            return voice;
-    }
-
     @Override
     public void run() {
-        System.out.println("Волк бежит!");
+        System.out.println(name+" "+ Run.interfaceName()+"!");
     }
 
     @Override
     public void swim() {
-        System.out.println("Волк плывет!");
+        System.out.println(name+" "+ Swim.interfaceName()+"!");
     }
 
     @Override
     public String voice() {
         return "У-у-у-у!";
     }
-}
+
+
+    }
+

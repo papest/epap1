@@ -18,14 +18,14 @@ class Worker {
 
         animal.eat(food);
         if (animal.eatFood) {
-                System.out.println(animal.name+(" ест с удовольствием!"));
+                System.out.println(animal.name+" ест с удовольствием "+food.foodName+"!");
             } else {
-                System.out.println(animal.name+" отказывается есть");
+                System.out.println(animal.name+" отказывается есть "+food.foodName+"!");
             }
       }
 
       public static void getVoice(Voice c){
-        System.out.println( c.voice());
+        System.out.println(" "+Voice.interfaceName()+" "+ c.voice());
         }
 
 }

@@ -15,12 +15,12 @@ public class Penguin extends Cornivorous implements Voice, Run, Swim {
 
     @Override
     public void run() {
-        System.out.println("Пингвин ковыляет!");
+        System.out.println(name+" "+ Run.interfaceName()+"!");
                   }
 
     @Override
     public void swim() {
-        System.out.println("Пингвин плывет!");
+        System.out.println(name+" "+ Swim.interfaceName()+"!");
 
     }
 }

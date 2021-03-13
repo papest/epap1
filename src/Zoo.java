@@ -3,37 +3,36 @@ import food.*;
 
 
 public class Zoo {
-   public static void main(String[] args) {
-       Worker worker = new Worker("Владимир Петрович");
-       Wolf wolf = new Wolf();
-       Oats oats = new Oats();
-       Duck duck = new Duck();
-       wolf.eat(oats);
-       Goat goat = new Goat();
-       Fish fish = new Fish();
-       Penguin penguin = new Penguin();
-       Swim[] pond ={fish,duck,penguin};
-       int i;
-       for (i=0; i< 3; i++) {
-           pond[i].swim();
-       }
+    public static void main(String[] args) {
+        Worker worker = new Worker("Владимир Петрович");
+        Wolf wolf = new Wolf();
+        Oats oats = new Oats();
+        Duck duck = new Duck();
+        wolf.eat(oats);
+        Goat goat = new Goat();
+        Fish fish = new Fish();
+        Penguin penguin = new Penguin();
+        Swim[] pond = {fish, duck, penguin};
+        Animal[] zooAnimal = {new Fish(),new Duck(),new Goat(),new Gopher(),new Penguin(),new Wolf()};
+        Food[] zooFood = {new Beefsteak(),new Meatball(),new Corn(),new Hay(),new Meatloaf(),new Oats()};
+        int i; int j;
+        for (i = 0; i < 3; i++) {
+            pond[i].swim();
+        }
+        for (i = 0; i < 6; i++){
+            for(j = 0; j < 6; j++){
+                Worker.feed(zooFood[j], zooAnimal[i]);
+            }
+        }
+        System.out.print(wolf.name);
+        Worker.getVoice(wolf);
+        System.out.print(goat.name);
+        Worker.getVoice(goat);
+        System.out.print(penguin.name);
+        Worker.getVoice(penguin);
+        //Worker.getVoice(fish); - ошибка компиляции
 
 
-       Gopher gopher = new Gopher();
-       Beefsteak beefsteak= new Beefsteak();
-       food.Hay hay = new food.Hay();
-       goat.eat(hay);
-       Meatball meatball= new Meatball();
-       wolf.eat(meatball);
-       Worker.feed(meatball,duck);
-       Worker.feed(meatball,wolf);
-       Worker.getVoice(wolf);
-       Worker.getVoice(goat);
-       Worker.getVoice(penguin);
-       //Worker.getVoice(fish); - ошибка компиляции
-       Worker.feed(oats,wolf);
-       Worker.feed(oats,goat);
-       Worker.feed(hay,gopher);
-
-   }
+    }
 }
+

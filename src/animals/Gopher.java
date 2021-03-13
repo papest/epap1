@@ -7,16 +7,14 @@ public class Gopher extends Herbivore implements Voice, Run, Swim {
         name="Суслик";
     }
 
-
-
     @Override
     public void run() {
-        System.out.println("Суслик бежит!");
+        System.out.println(name+" "+ Run.interfaceName()+"!");
     }
 
     @Override
     public void swim() {
-        System.out.println("Где ж тут плавать суслику!");
+        System.out.println(name+" "+ Swim.interfaceName()+"!");
     }
 
     @Override

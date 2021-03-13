@@ -10,17 +10,17 @@ public class Duck extends Cornivorous implements Swim, Voice, Fly, Run {
 
     @Override
     public void run() {
-        System.out.println("Утка бежит!");
+        System.out.println(name+" "+ Run.interfaceName()+"!");
     }
 
     @Override
     public void swim() {
-        System.out.println("Утка плывет!");
+        System.out.println(name+" "+ Swim.interfaceName()+"!");
     }
 
     @Override
     public void fly() {
-        System.out.println("Утка летит!");
+        System.out.println(name+" "+ Fly.interfaceName()+"!");
     }
 
     @Override

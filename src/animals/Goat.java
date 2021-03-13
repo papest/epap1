@@ -8,12 +8,12 @@ public class Goat extends Herbivore implements Voice, Run, Swim {
 
     @Override
     public void run() {
-        System.out.println("Коза бежит!");
+        System.out.println(name+" "+ Run.interfaceName()+"!");
     }
 
     @Override
     public void swim() {
-        System.out.println("Коза плывет-пришлось!");
+        System.out.println(name+" "+ Swim.interfaceName()+"!");
     }
 
     @Override

@@ -5,8 +5,8 @@ import food.Meat;
 
 
 
-public class Cornivorous extends Animal{
-   // public boolean eatFood;
+public abstract class  Cornivorous extends Animal{
+
 
     public void eat(Food food) {
 
