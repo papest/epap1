@@ -15,12 +15,13 @@ public class Zoo {
         Swim[] pond = {fish, duck, penguin};
         Animal[] zooAnimal = {new Fish(),new Duck(),new Goat(),new Gopher(),new Penguin(),new Wolf()};
         Food[] zooFood = {new Beefsteak(),new Meatball(),new Corn(),new Hay(),new Meatloaf(),new Oats()};
+        System.out.println("Длина массива zooFood"+zooFood.length);
         int i; int j;
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < pond.length; i++) {
             pond[i].swim();
         }
-        for (i = 0; i < 6; i++){
-            for(j = 0; j < 6; j++){
+        for (i = 0; i < zooAnimal.length; i++){
+            for(j = 0; j < zooFood.length; j++){
                 Worker.feed(zooFood[j], zooAnimal[i]);
             }
         }
