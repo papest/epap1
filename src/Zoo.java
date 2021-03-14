@@ -22,15 +22,15 @@ public class Zoo {
         }
         for (i = 0; i < zooAnimal.length; i++){
             for(j = 0; j < zooFood.length; j++){
-                Worker.feed(zooFood[j], zooAnimal[i]);
+                worker.feed(zooFood[j], zooAnimal[i]);
             }
         }
         System.out.print(wolf.name);
-        Worker.getVoice(wolf);
+        worker.getVoice(wolf);
         System.out.print(goat.name);
-        Worker.getVoice(goat);
+        worker.getVoice(goat);
         System.out.print(penguin.name);
-        Worker.getVoice(penguin);
+        worker.getVoice(penguin);
         //Worker.getVoice(fish); - ошибка компиляции
 
 

@@ -14,7 +14,7 @@ class Worker {
     }
 
 
-      public static void feed(Food food,Animal animal) {
+      public void feed(Food food,Animal animal) {
 
         animal.eat(food);
         if (animal.eatFood) {
@@ -24,7 +24,7 @@ class Worker {
             }
       }
 
-      public static void getVoice(Voice c){
+      public void getVoice(Voice c){
         System.out.println(" "+Voice.interfaceName()+" "+ c.voice());
         }
 
