@@ -15,7 +15,7 @@ public class Zoo {
         Swim[] pond = {fish, duck, penguin};
         Animal[] zooAnimal = {new Fish(),new Duck(),new Goat(),new Gopher(),new Penguin(),new Wolf()};
         Food[] zooFood = {new Beefsteak(),new Meatball(),new Corn(),new Hay(),new Meatloaf(),new Oats()};
-        System.out.println("Длина массива zooFood"+zooFood.length);
+
         int i; int j;
         for (i = 0; i < pond.length; i++) {
             pond[i].swim();
