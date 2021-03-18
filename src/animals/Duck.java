@@ -3,9 +3,29 @@ package animals;
 
 public class Duck extends Cornivorous implements Swim, Voice, Fly, Run {
 
+    EnSize enSize = EnSize.BIGSIZE;
+    Integer id;
     public Duck(){
         name="Утка";
+        Animal.incrementId();
+        id=Animal.idAnimal;
+
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==this){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
+    }
+
 
 
     @Override

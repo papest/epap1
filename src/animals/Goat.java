@@ -1,9 +1,32 @@
 package animals;
 
+import static animals.EnSize.MIDDLESIZE;
+
+
 public class Goat extends Herbivore implements Voice, Run, Swim {
+   public EnSize ensize= MIDDLESIZE;
+   Integer id;
 
     public Goat() {
         name="Коза";
+        Animal.incrementId();
+       id=Animal.idAnimal;
+
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==this){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 
     @Override

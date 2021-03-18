@@ -11,6 +11,7 @@ public class Zoo {
         wolf.eat(oats);
         Goat goat = new Goat();
         Fish fish = new Fish();
+        Gopher gopher=new Gopher();
         Penguin penguin = new Penguin();
         Swim[] pond = {fish, duck, penguin};
         Animal[] zooAnimal = {new Fish(),new Duck(),new Goat(),new Gopher(),new Penguin(),new Wolf()};
@@ -32,8 +33,22 @@ public class Zoo {
         System.out.print(penguin.name);
         worker.getVoice(penguin);
         //Worker.getVoice(fish); - ошибка компиляции
+        Enclosure<Cornivorous> enclosure= new Enclosure<>(wolf.enSize);
+        Enclosure<Herbivore> enclosure1= new Enclosure<>(EnSize.LITTLESIZE);
+        System.out.println(gopher.enSize+" "+enclosure.sizeOfEnclosure);
+        if (enclosure.putAnimalToEnclosure(wolf)){
+            System.out.print(gopher.enSize+" ");
+            System.out.println(gopher.name+"переведен в вольер");
+        }
+         if (enclosure1.putAnimalToEnclosure(gopher)){
+             System.out.print(gopher.enSize+" ");
+             System.out.println(gopher.name+"переведен в вольер");
+         }
 
-
+        if (enclosure1.putAnimalToEnclosure(gopher)){
+        System.out.println(gopher.enSize+" ");
+         System.out.println(gopher.name+"переведен в вольер");
+       }
     }
 }
 

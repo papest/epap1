@@ -6,7 +6,7 @@ import food.Food;
 class Worker {
 
 
-    private  String workerName;
+    private final String workerName;
 
     public Worker(String workerName) {
         this.workerName=workerName;

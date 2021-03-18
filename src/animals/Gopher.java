@@ -1,10 +1,30 @@
 package animals;
 
+import static animals.EnSize.LITTLESIZE;
+
 public class Gopher extends Herbivore implements Voice, Run, Swim {
 
-
+    public EnSize enSize = LITTLESIZE;
+    Integer id;
     public Gopher(){
         name="Суслик";
+        Animal.incrementId();
+        id=Animal.idAnimal;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==this){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 
     @Override

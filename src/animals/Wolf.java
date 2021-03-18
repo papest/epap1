@@ -1,9 +1,28 @@
 package animals;
 
 public class Wolf extends Cornivorous implements Voice, Run, Swim {
+    public EnSize enSize= EnSize.SUPERBIGSIZE;
+    Integer id;
 
     public Wolf() {
         name="Волк";
+        Animal.incrementId();
+        id=Animal.idAnimal;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==this){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
     }
 
     @Override
