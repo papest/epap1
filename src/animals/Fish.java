@@ -1,8 +1,8 @@
 package animals;
 
 public class Fish extends Herbivore implements Swim {
-    EnSize enSize=EnSize.MIDDLESIZE;
-    Integer id;
+    public EnSize enSize=EnSize.MIDDLESIZE;
+    final public Integer id;
     public Fish(){
         name="Рыба";
         Animal.incrementId();

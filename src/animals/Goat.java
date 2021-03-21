@@ -5,7 +5,7 @@ import static animals.EnSize.MIDDLESIZE;
 
 public class Goat extends Herbivore implements Voice, Run, Swim {
    public EnSize ensize= MIDDLESIZE;
-   Integer id;
+   final public Integer id;
 
     public Goat() {
         name="Коза";

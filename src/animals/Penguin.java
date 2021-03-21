@@ -3,7 +3,7 @@ package animals;
 
 public class Penguin extends Cornivorous implements Voice, Run, Swim {
     public EnSize enSize= EnSize.BIGSIZE;
-    Integer id;
+    final public Integer id;
 
     public Penguin(){
         name="Пингвин";
