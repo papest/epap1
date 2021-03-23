@@ -1,100 +1,97 @@
 
 import animals.*;
+
+
 import java.util.HashMap;
 
 
-public class Enclosure<T extends EnSize> {
+public class Enclosure<T extends EnSize,S extends Animal> {
 
     public EnSize sizeOfEnclosure;
     private HashMap<Integer, Animal> hashmap;
-    private Animal ourHero_;
     public WhatAnimalEat  whatAnimalEat;
-    //public Integer id;
 
-   public  Enclosure(T t)// throws IllegalAccessException, InstantiationException{
-   {  sizeOfEnclosure = t;
-      this.hashmap = new HashMap<>();
-      System.out.println("Создан вольер размера "+this.sizeOfEnclosure);
-   }
 
-   public boolean putAnimalToEnclosure(Cornivorous ourHero) {
-       ourHero_= ourHero;
+    public  Enclosure (T t) {
 
-       System.out.println(" putAnimalToEnclosure" + this.sizeOfEnclosure + " "
-               + ourHero.id.toString() +" "+ourHero.name);
-       this.whatAnimalEat=WhatAnimalEat.MEAT;
-       // if (this.sizeOfEnclosure.equals(cornivorous.enSize)) {
-        //    System.out.println("Вольер подходит.");
-         //   if (this.hashmap1 == null) {
-         //       this.hashmap1 = new HashMap<>();
-          //      this.hashmap1.put(cornivorous.id, cornivorous);
-               return true;
-           // } else if (!hashmap1.containsKey(cornivorous.id)) {
-           //     this.hashmap1.put(cornivorous.id, cornivorous);
-            //    System.out.println("Животное " + cornivorous.name + " размещено.");
-            //    return true;
-           // } else {
-            //    System.out.println("Животное " + cornivorous.name + " номер в зоопарке " + cornivorous.id + "уже в вольере.");
-            //    return false;
-           // }
-       // } else {
-        //    return false;
-      //  }
+        sizeOfEnclosure = t;
+        this.hashmap = new HashMap<>();
+        System.out.println("Создан вольер размера "+this.sizeOfEnclosure);
     }
 
 
 
-    public boolean putAnimalToEnclosure(Herbivore ourHero) {
-        System.out.println(" putAnimalToEnclosure" + this.sizeOfEnclosure + " " + ourHero.enSize+ " "+ (ourHero.id).toString());
-        this.whatAnimalEat=WhatAnimalEat.GRASS;
-        //if (enclosure.sizeOfEnclosure == EnSize.LITTLESIZE) {
-        //if (this.sizeOfEnclosure.equals(herbivore.enSize)) {
-           // System.out.println("Вольер подходит.");
-           // if (!hashmap.containsKey(herbivore.id)) {
-            //    this.hashmap.put(herbivore.id, herbivore);
+    public boolean putAnimalToEnclosure(S ourHero) {
 
-                System.out.println("Животное " + ourHero.name + " размещено.");
+        if (this.sizeOfEnclosure!=ourHero.enSize){
+            System.out.println("Животному "+ourHero.name +" требуется вольер другого размера");
+            return false;
+        }
+
+        if (this.hashmap.isEmpty()){
+            if (ourHero instanceof Cornivorous){
+                whatAnimalEat = WhatAnimalEat.MEAT;
+
+            }else if(ourHero instanceof Herbivore){
+                whatAnimalEat = WhatAnimalEat.GRASS;
+
+            }else{
+                System.out.println("Что за странный зверь у вас?");
+                return false;
+            }
+        }
+        if (((ourHero instanceof Cornivorous)&&(whatAnimalEat==WhatAnimalEat.MEAT)) ||((ourHero instanceof Herbivore)&&(whatAnimalEat==WhatAnimalEat.GRASS))){
+            if (this.hashmap.put(ourHero.id,ourHero)==null){
                 return true;
-            //} else {
-             //   System.out.println("Животное " + herbivore.name + " номер в зоопарке " + herbivore.id + "уже в вольере.");
-             //   return false;
-           // }
-       // } else {
-       //     return false;
-       // }
-    }
+            }else{
+                System.out.println("Животное уже в вольере");
+                return false;
+            }
+        }else{
+            switch (whatAnimalEat){
+            case MEAT :
+                System.out.println("Это вольер для хищников. "+ourHero.name+" - травоядное.");
+                break;
+            case GRASS :
+                System.out.println("Это вольер для травоядных. "+ourHero.name+" - хищник." );
+                break;
+            }
+            return false;
+        }
+     }
 
 
-    public boolean removeAnimalFromEnclosure(Cornivorous cornivorous) {
+    public boolean removeAnimalFromEnclosure(Integer idAnimal) {
+        Animal removeAnimal;
 
-        if (this.hashmap.containsKey(cornivorous.id)) {
-            this.hashmap.remove(cornivorous.id);
-            return true;
-        } else {
+        if (!this.hashmap.isEmpty()){
+            removeAnimal= this.hashmap.remove(idAnimal);
+            if (removeAnimal!=null){
+                System.out.println("Животное "+removeAnimal.id+ " успешно удалено из вольера");
+                return true;
+            }else{
+                System.out.println("Животного нет в этом вольере");
+                return false;
+            }
+        }else{
+            System.out.println("Вольер пуст");
             return false;
         }
     }
 
-    public boolean removeAnimalFromEnclosure(Herbivore herbivore) {
-
-        if (this.hashmap.containsKey(herbivore.id)) {
-            this.hashmap.remove(herbivore.id);
-            return true;
-        } else {
-            return false;
-        }
-
-    }
 
     public Animal getAnimalFromEnclosure(Integer animalId) {
-        if  (this.hashmap!=null){
+
+        if  (!this.hashmap.isEmpty()){
         if (this.hashmap.containsKey(animalId)) {
             return this.hashmap.get(animalId);
-        } else {
+        }else {
+            System.out.println("Животного нет в этом вольере");
             return null;
-        }}
-        return null;
-   }
+        }
+        }else {
+            return null;}
+    }
 
 }
 

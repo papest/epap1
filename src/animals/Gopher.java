@@ -1,16 +1,13 @@
 package animals;
 
-import static animals.EnSize.LITTLESIZE;
-
 public class Gopher extends Herbivore implements Voice, Run, Swim {
 
-    public EnSize enSize = LITTLESIZE;
-    final public Integer id;
+
     public Gopher(){
         name="Суслик";
         Animal.incrementId();
         id=Animal.idAnimal;
-
+        enSize = EnSize.LITTLESIZE;
     }
 
     @Override

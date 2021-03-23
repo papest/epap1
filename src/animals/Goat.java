@@ -4,16 +4,15 @@ import static animals.EnSize.MIDDLESIZE;
 
 
 public class Goat extends Herbivore implements Voice, Run, Swim {
-   public EnSize ensize= MIDDLESIZE;
-   final public Integer id;
 
-    public Goat() {
+
+   public Goat() {
         name="Коза";
         Animal.incrementId();
        id=Animal.idAnimal;
+       enSize= EnSize.MIDDLESIZE;
+   }
 
-
-    }
 
     @Override
     public boolean equals(Object obj) {

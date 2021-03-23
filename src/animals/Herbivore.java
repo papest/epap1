@@ -5,7 +5,7 @@ import food.Grass;
 
 
 public abstract class Herbivore extends Animal {
-    public EnSize enSize;
+
     public void eat(Food food) {
 
         eatFood=food instanceof Grass;

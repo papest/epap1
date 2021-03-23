@@ -3,12 +3,12 @@ package animals;
 
 public class Duck extends Cornivorous implements Swim, Voice, Fly, Run {
 
-    EnSize enSize = EnSize.BIGSIZE;
-    final public Integer id;
+
     public Duck(){
         name="Утка";
         Animal.incrementId();
         id=Animal.idAnimal;
+        enSize = EnSize.BIGSIZE;
 
     }
 

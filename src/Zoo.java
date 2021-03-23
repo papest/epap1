@@ -34,64 +34,37 @@ public class Zoo {
         //Worker.getVoice(fish); - ошибка компиляции
 
 
-        System.out.println("волк.getClass():"+(wolf.getClass()));
-        System.out.println("Волк.класс: "+Wolf.class);
 
+        Animal[]  demo1 = {new  Wolf(),new Wolf(),new Duck(),new Penguin(),new Goat(),new Gopher(),new Penguin(),new Fish()};
+        int col;
+        Enclosure enc[]={new Enclosure<>(demo1[1].enSize),new Enclosure<>(demo1[3].enSize),new Enclosure<>(demo1[4].enSize),new Enclosure<>(demo1[5].enSize),new Enclosure<>(demo1[7].enSize)};
 
-        Cornivorous[]  demo1 = {new  Wolf(),new Duck(),new Penguin()};
-
-       Enclosure<EnSize> enclosure2= new Enclosure<>(wolf.enSize);
-       for (i = 0; i < demo1.length; i++){
-
-              enclosure2.putAnimalToEnclosure(demo1[i]);
-       }
-
-        j=0;
-        for (i = 0; i < demo1.length; i++){
-
-        if   (null != enclosure2.getAnimalFromEnclosure(demo1[i].id)){
-           System.out.println(enclosure2.getAnimalFromEnclosure(demo1[i].id).name+" паспортный номер  "+enclosure2.getAnimalFromEnclosure(demo1[i].id)+" находится в вольере");
-           ++j;
+        for (i = 0; i < demo1.length; i++) {
+            for (j = 0; j < enc.length; j++){
+                if (enc[j].putAnimalToEnclosure(demo1[i])) {
+                    System.out.println("Животное " + demo1[i].name + " паспортный номер " + demo1[i].id + " размещено в вольере номер " + j +
+                            " размера " + enc[j].sizeOfEnclosure);
+                    break;
+                }
             }
         }
-        System.out.println("В вольере "+j+ " животных");
-
-
-        Enclosure<EnSize> enclosure3= new Enclosure<>(gopher.enSize);
-        Herbivore[]  demo2 = {new Goat(),new Gopher(),new Fish()};
-        for (i = 0; i < demo2.length; i++){
-
-           enclosure3.putAnimalToEnclosure(demo2[i]);
-
-        }
-        j=0;
-        for (i = 0; i < demo2.length; i++){
-
-           if   (null != enclosure3.getAnimalFromEnclosure(demo2[i].id)){
-               System.out.println(enclosure3.getAnimalFromEnclosure(demo2[i].id).name+" паспортный номер  "+enclosure2.getAnimalFromEnclosure(demo2[i].id)+" находится в вольере");
-               ++j;
+        Animal an;
+        for (j = 0; j < enc.length; j++){
+            col=0;
+            for (i = 0; i < demo1.length; i++) {
+                an=enc[j].getAnimalFromEnclosure(demo1[i].id);
+                if (an != null){
+                    col=++col;
+                    System.out.println("Животное "+an.name+" паспортный номер " + demo1[i].id + " находится в вольере "+j+".");
+                }
             }
+            System.out.println("В вольере "+ j + " количество животных "+col+".");
+
         }
-        System.out.println("В вольере "+j+ " животных");
 
+        enc[3].removeAnimalFromEnclosure(18);
+        enc[3].removeAnimalFromEnclosure(18);
 
-
-       // Enclosure<Cornivorous> enclosure= new Enclosure<>(wolf.enSize);
-      //  Enclosure<Herbivore> enclosure1= new Enclosure<>(EnSize.LITTLESIZE);
-       // System.out.println(gopher.enSize+" "+enclosure.sizeOfEnclosure);
-       // if (enclosure.putAnimalToEnclosure(wolf)){
-       //     System.out.print(gopher.enSize+" ");
-       //     System.out.println(gopher.name+"переведен в вольер");
-       // }
-        // if (enclosure1.putAnimalToEnclosure(gopher)){
-         //    System.out.print(gopher.enSize+" ");
-         //    System.out.println(gopher.name+"переведен в вольер");
-         }
-
-        //if (enclosure1.putAnimalToEnclosure(gopher)){
-      //  System.out.println(gopher.enSize+" ");
-      //   System.out.println(gopher.name+"переведен в вольер");
-     //  }
-   // }
+    }
 }
 

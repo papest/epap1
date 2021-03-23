@@ -1,13 +1,12 @@
 package animals;
 
 public class Wolf extends Cornivorous implements Voice, Run, Swim {
-    public EnSize enSize= EnSize.SUPERBIGSIZE;
-    final public Integer id;
 
     public Wolf() {
         name="Волк";
         Animal.incrementId();
         id=Animal.idAnimal;
+        enSize= EnSize.SUPERBIGSIZE;
 
     }
 
